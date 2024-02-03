@@ -4,6 +4,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OpenEqiSports.Modules.Overview.Overview">
     <ContentPage.Content>
-        
+        <Label Text="Overview" />
     </ContentPage.Content>
 </ContentPage>
