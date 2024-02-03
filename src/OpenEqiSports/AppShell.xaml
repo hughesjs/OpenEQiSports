@@ -7,9 +7,7 @@
     Shell.FlyoutBehavior="Disabled"
     Title="OpenEqiSports">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+
+    
 
 </Shell>

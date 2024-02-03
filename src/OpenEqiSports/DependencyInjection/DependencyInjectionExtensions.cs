@@ -1,12 +1,16 @@
+using Material.Components.Maui.Extensions;
+using Microsoft.Maui.Platform;
+
 namespace OpenEqiSports.DependencyInjection;
 
 public static class DependencyInjectionExtensions
 {
-    public static IServiceCollection AddFrontend(this IServiceCollection services)
+    public static MauiAppBuilder AddFrontend(this MauiAppBuilder builder)
     {
-        services.AddSingleton<AppShell>();
-        services.AddAllScreens();
-        return services;
+        builder.UseMaterialComponents();
+        builder.Services.AddSingleton<AppShell>();
+        builder.Services.AddAllScreens();
+        return builder;
     }
     
     public static IServiceCollection AddAllScreens(this IServiceCollection services)
