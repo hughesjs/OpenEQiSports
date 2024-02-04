@@ -2,8 +2,9 @@
 
 public partial class AppShell : Shell
 {
-    public AppShell()
+    public AppShell(MainLayout mainLayout)
     {
+        ShellContent.ContentTemplate = new(() => mainLayout);
         InitializeComponent();
     }
 }

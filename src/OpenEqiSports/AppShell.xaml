@@ -3,11 +3,12 @@
     x:Class="OpenEqiSports.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:OpenEqiSports"
     Shell.FlyoutBehavior="Disabled"
     Title="OpenEqiSports">
 
-
-    
+    <ShellContent
+        x:Name="ShellContent"
+        Title="Home"
+        Route="MainPage" />
 
 </Shell>

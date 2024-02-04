@@ -48,11 +48,28 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="IconPacks.Material" Version="1.0.8793.1-build" />
         <PackageReference Include="Material.Components.Maui" Version="0.2.1-preview" />
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
         <PackageReference Include="Plugin.BLE" Version="3.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <MauiXaml Update="Layouts\Main\MainLayout.xaml">
+        <SubType>Designer</SubType>
+      </MauiXaml>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Layouts\Main\MainLayout.xaml.cs">
+        <DependentUpon>MainLayout.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Layouts\Main\MainLayoutViewModel.cs">
+        <DependentUpon>MainLayout.xaml</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>

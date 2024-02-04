@@ -1,5 +1,7 @@
 using Material.Components.Maui.Extensions;
 using Microsoft.Maui.Platform;
+using OpenEqiSports.Layouts.Main;
+using OpenEqiSports.Modules;
 
 namespace OpenEqiSports.DependencyInjection;
 
@@ -8,20 +10,28 @@ public static class DependencyInjectionExtensions
     public static MauiAppBuilder AddFrontend(this MauiAppBuilder builder)
     {
         builder.UseMaterialComponents();
+        builder.Services.AddLayouts();
         builder.Services.AddSingleton<AppShell>();
-        builder.Services.AddAllScreens();
+        builder.Services.AddModuleRoots();
         return builder;
     }
-    
-    public static IServiceCollection AddAllScreens(this IServiceCollection services)
+
+    private static IServiceCollection AddLayouts(this IServiceCollection services)
     {
-        List<Type> screens = typeof(App).Assembly.GetTypes()
-            .Where(x => x.IsSubclassOf(typeof(ContentPage)))
+        services.AddSingleton<MainLayout>();
+        services.AddTransient<MainLayoutViewModel>();
+        return services;
+    }
+
+    private static IServiceCollection AddModuleRoots(this IServiceCollection services)
+    {
+        List<Type> moduleRoots = typeof(App).Assembly.GetTypes()
+            .Where(x => x.IsAssignableTo(typeof(IModuleRootPage)) && x is { IsInterface: false, IsAbstract: false })
             .ToList();
         
-        foreach (Type screen in screens)
+        foreach (Type screen in moduleRoots)
         {
-            services.AddSingleton(screen);
+            services.Add(new(typeof(IModuleRootPage), screen, ServiceLifetime.Singleton));
         }
         
         return services;

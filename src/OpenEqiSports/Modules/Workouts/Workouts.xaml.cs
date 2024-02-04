@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace OpenEqiSports.Modules.WorkoutDefinition;
 
-public partial class Workouts : ContentPage
+public partial class Workouts : IModuleRootPage
 {
     public Workouts()
     {
         InitializeComponent();
     }
+
+    public string Icon => IconPacks.IconKind.Material.FitnessCenter;
 }
