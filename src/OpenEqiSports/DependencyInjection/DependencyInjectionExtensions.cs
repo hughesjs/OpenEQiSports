@@ -1,5 +1,4 @@
 using Material.Components.Maui.Extensions;
-using Microsoft.Maui.Platform;
 using OpenEqiSports.Layouts.Main;
 using OpenEqiSports.Modules;
 

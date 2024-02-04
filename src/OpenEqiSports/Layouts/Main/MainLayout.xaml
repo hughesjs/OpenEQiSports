@@ -5,7 +5,7 @@
              xmlns:mdc="clr-namespace:Material.Components.Maui;assembly=Material.Components.Maui"
              xmlns:icon="clr-namespace:IconPacks.IconKind;assembly=IconPacks.Material"
              xmlns:main="clr-namespace:OpenEqiSports.Layouts.Main"
-             x:Class="OpenEqiSports.MainLayout" x:DataType="main:MainLayoutViewModel">
+             x:Class="OpenEqiSports.Layouts.Main.MainLayout" x:DataType="main:MainLayoutViewModel">
     
     
     <ContentPage.Content>

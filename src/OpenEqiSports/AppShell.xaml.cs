@@ -1,4 +1,6 @@
-﻿namespace OpenEqiSports;
+﻿using OpenEqiSports.Layouts.Main;
+
+namespace OpenEqiSports;
 
 public partial class AppShell : Shell
 {

@@ -1,10 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OpenEqiSports.Modules.WorkoutDefinition;
+namespace OpenEqiSports.Modules.Workouts;
 
 public partial class Workouts : IModuleRootPage
 {
